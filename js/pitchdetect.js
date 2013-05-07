@@ -4,7 +4,6 @@ var sourceNode = null;
 var analyser = null;
 var theBuffer = null;
 var detectorElem, 
-	canvasElem,
 	pitchElem,
 	noteElem,
 	detuneElem,
@@ -22,7 +21,6 @@ window.onload = function() {
 	request.send();
 
 	detectorElem = document.getElementById( "detector" );
-	canvasElem = document.getElementById( "output" );
 	pitchElem = document.getElementById( "pitch" );
 	noteElem = document.getElementById( "note" );
 	detuneElem = document.getElementById( "detune" );
@@ -228,7 +226,6 @@ function updatePitch( time ) {
 	// possible other approach to confidence: sort the array, take the median; go through the array and compute the average deviation
 
  	detectorElem.className = (confidence>50)?"confident":"vague";
-	// TODO: Paint confidence meter on canvasElem here.
 
  	if (num_cycles == 0) {
 	 	pitchElem.innerText = "--";
